@@ -8,64 +8,58 @@
     <title>My Bank</title>
 </head>
 
-<body>
+<body class="bg-gray-100">
 
-    <div class="  w-auto mx-80 mt-20 rounded shadow-2xl border-t-4 border-l-4 p-6">
+    <div class="w-full max-w-4xl mx-auto mt-10 p-6 bg-white rounded shadow-2xl border-t-4 border-l-4">
         <h1 class="text-2xl font-bold mb-4 text-center text-green-500">My Mini Bank</h1>
-        <h1 class="text-2xl font-bold mb-4 text-center text-green-500">Hi MD.Alif Khan</h1>
-        <div class="flex justify-center bg-green-500  p-6 rounded-xl mx-4">
+        <h1 class="text-xl font-bold mb-4 text-center text-green-500">Hi MD. Alif Khan</h1>
+
+        <div class="flex flex-col md:flex-row justify-center bg-green-500 p-6 rounded-xl mx-4">
             <div>
-                <h1 class="text-2xl font-bold mb-4 text-center">Total Balance</h1>
-                <h1 class="text-2xl font-bold mb-4 text-center text-white" > $ <span id="total">0.00</span></h1>
-            </div>
-        </div>
-        <div class="flex justify-around my-4">
-            <div class="bg-blue-500 p-6 rounded-xl">
-                <h1 class="text-2xl font-bold mb-4 text-center">Total Deposite Balance</h1>
-                <h1 class="text-2xl font-bold mb-4 text-center text-white" > $ <span id="deposite" >0.00</span></h1>
-            </div>
-            <div class="bg-red-500 p-6 rounded-xl">
-                <h1 class="text-2xl font-bold mb-4 text-center">Total Withdraw Balance</h1>
-                <h1 class="text-2xl font-bold mb-4 text-center text-white" > $ <span id="withdraw">0.00</span></h1>
+                <h1 class="text-xl font-bold mb-4 text-center">Total Balance</h1>
+                <h1 class="text-2xl font-bold mb-4 text-center text-white">$ <span id="total">0.00</span></h1>
             </div>
         </div>
 
-        <div class="flex justify-center p-6 rounded-xl gap-5 mx-4">
-            <input type="number" value="0" name="amount" id="amount" class="w-full p-2 border rounded-xl" placeholder="Enter Amount">
-           <select name="select" id="select" class="w-full p-2 border rounded-xl">
-                <option value="deposite">Deposite</option>
+        <div class="flex flex-col md:flex-row justify-around my-4 gap-4">
+            <div class="bg-blue-500 p-6 rounded-xl flex-1">
+                <h1 class="text-xl font-bold mb-4 text-center">Total Deposit Balance</h1>
+                <h1 class="text-2xl font-bold mb-4 text-center text-white">$ <span id="deposite">0.00</span></h1>
+            </div>
+            <div class="bg-red-500 p-6 rounded-xl flex-1">
+                <h1 class="text-xl font-bold mb-4 text-center">Total Withdraw Balance</h1>
+                <h1 class="text-2xl font-bold mb-4 text-center text-white">$ <span id="withdraw">0.00</span></h1>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center p-6 rounded-xl gap-5 mx-4">
+            <input type="number" value="0" name="amount" id="amount" class="w-full md:w-1/2 p-2 border rounded-xl" placeholder="Enter Amount">
+            <select name="select" id="select" class="w-full md:w-1/2 p-2 border rounded-xl">
+                <option value="deposite">Deposit</option>
                 <option value="withdraw">Withdraw</option>
             </select>
-        </select>
-        
+        </div>
+
+        <div class="m-auto w-full md:w-60">
+            <button id="btn" class="bg-green-500 p-2 w-full rounded-xl text-white font-bold">Submit</button>
+        </div>
+
+        <h1 class="text-xl font-bold mb-4 text-center my-6">Transaction History</h1>
+        <div id="his" class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2 text-center border border-gray-300">Type</th>
+                        <th class="px-4 py-2 text-center border border-gray-300">Amount</th>
+                        <th class="px-4 py-2 text-center border border-gray-300">Date</th>
+                        <th class="px-4 py-2 text-center border border-gray-300">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class=" m-auto w-60">
-
-        <button id="btn" class="bg-green-500 p-2 w w-full rounded-xl text-white font-bold">Submit</button>
-    </div>
-
-
-    
-    <h1 class="text-2xl font-bold mb-4 text-center my-6">Transaction History</h1>
-    <div  id="his" >
-        <table>
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="px-4 py-2  text-center">Type</th>
-              <th class="px-4 py-2  text-center">Amount</th>
-              <th class="px-4 py-2  text-center">Date</th>
-              <th class="px-4 py-2  text-center">Action</th>
-            </tr>
-          </thead>
-          <tbody id="list">
-            
-          </tbody>
-        </table>
-      </div>
-
-
-    </div>
-
 
     <script src="index.js"></script>
 </body>
